@@ -1,0 +1,41 @@
+.hotspot-body {
+    background-image: url(../images/att_background_tiled.png);
+    background-attachment: fixed;
+    background-repeat: repeat-y;
+    position: fixed;
+    top: 0px;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+}
+
+#info {
+    margin-top: 20%;
+}
+
+.text {
+    font-size: 16px;
+    text-align: center;
+}
+
+.spinner {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 5%;
+    margin-bottom: 5%;
+}
+
+#progress {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#progress-body {
+    z-index: 1;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    padding-top: 10%;
+    margin-left: auto;
+    margin-right: auto;
+}

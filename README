@@ -1,0 +1,4 @@
+This is a simple wrapper around the AT&T WiFi Locator website
+(http://bit.ly/att-wifi). It uses the GPS to get your location and the locator
+website to show you a list of AT&T WiFi HotSpots nearby. This app is in no way
+affiliated with or endorsed by AT&T.

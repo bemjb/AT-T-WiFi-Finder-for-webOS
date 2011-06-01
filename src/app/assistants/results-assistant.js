@@ -39,8 +39,6 @@ ResultsAssistant.prototype.setup = function() {
     );
     this.controller.setupWidget("web", this.webAttrs, {}); 
 
-    this.controller.get('progress-body').hide();
-    
     /* add event handlers to listen to events from widgets */
     this.startLoadHandlerBound = this.startLoadHandler.bind(this);
     this.loadProgressHandlerBound = this.loadProgressHandler.bind(this);

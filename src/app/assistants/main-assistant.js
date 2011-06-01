@@ -37,7 +37,6 @@ MainAssistant.prototype.getGPSFix = function () {
                     this.failed(
                         "GPS and Google location services need to be enabled!"
                     );
-                    this.failed();
                     break;
                 case 1: case 2:
                     Mojo.Log.info("Temp failure, trying again in 5 seconds.");
@@ -53,7 +52,6 @@ MainAssistant.prototype.getGPSFix = function () {
                     this.failed(
                         "GPS lookup failed for an unknown reason!"
                     );
-                    this.failed();
                     break;
             }
         }.bind(this)

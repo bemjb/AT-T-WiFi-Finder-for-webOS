@@ -78,6 +78,7 @@ ResultsAssistant.prototype.startLoadHandler = function (event) {
 ResultsAssistant.prototype.loadProgressHandler = function (progress) {
     Mojo.Log.info("progress %s", Object.toJSON(progress));
     this.model.progressValue = progress.progress/100.0;
+    this.controller.modelChanged(this.model);
 };
 
 ResultsAssistant.prototype.stopLoadHandler = function (event) {

@@ -1,7 +1,13 @@
-.hotspot-body {
+.hotspot-bg {
     background-image: url(../images/att_background_tiled.png);
     background-attachment: fixed;
     background-repeat: repeat-y;
+    width: 100%;
+    margin: 0px;
+    padding: 2px;
+}
+
+.hotspot-body {
     position: fixed;
     top: 0px;
     bottom: 0px;
@@ -38,4 +44,19 @@
     padding-top: 20%;
     margin-left: auto;
     margin-right: auto;
+}
+
+#icon {
+    float: right;
+    margin: 5px;
+}
+
+.location-text {
+    margin-top: 1em;
+    margin-bottom: 1em;
+    clear: all;
+}
+
+.location-icon-text {
+    vertical-align: middle;
 }

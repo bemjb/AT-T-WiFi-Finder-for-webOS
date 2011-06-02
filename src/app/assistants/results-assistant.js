@@ -1,12 +1,10 @@
-function ResultsAssistant(address) {
+function ResultsAssistant(url) {
     /* this is the creator function for your scene assistant object. It will be passed all the 
        additional parameters (after the scene name) that were passed to pushScene. The reference
        to the scene controller (this.controller) has not be established yet, so any initialization
        that needs the scene controller should be done in the setup function below. */
-    this.baseURL = 'http://attwifi.know-where.com/attwifip/cgi/selection?mapid=US&lang=en&design=mobile&place=';
-    this.address = address;
     this.webAttrs = {
-        url: this.baseURL + encodeURIComponent(address)
+        url: url
     };
     this.model = {
         progressValue: 0,
@@ -65,7 +63,6 @@ ResultsAssistant.prototype.setup = function() {
         Mojo.Event.webViewLoadFailed,
         this.failedLoadHandlerBound
     );
-
 };
 
 ResultsAssistant.prototype.startLoadHandler = function (event) {
@@ -83,13 +80,13 @@ ResultsAssistant.prototype.stopLoadHandler = function (event) {
     this.controller.get('progress-body').hide();
 };
 
-ResultsAssistant.prototype.failedLoadHandler = function (errorCode, message) {
+ResultsAssistant.prototype.failedLoadHandler = function (event) {
     Mojo.Log.error(
         "Failed to load page. Error code = %s, message = %s",
-        errorCode,
-        message
+        event.errorCode,
+        event.message
     );
-    Mojo.Controller.errorDialog(message);
+    Mojo.Controller.errorDialog(event.message);
 };
 
 ResultsAssistant.prototype.activate = function(event) {

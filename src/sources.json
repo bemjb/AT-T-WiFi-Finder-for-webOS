@@ -7,5 +7,9 @@
     {
         "scenes": "results",
         "source": "app/assistants/results-assistant.js"
+    },
+    {
+        "scenes": "location-off",
+        "source": "app/assistants/location-off-assistant.js"
     }
 ]

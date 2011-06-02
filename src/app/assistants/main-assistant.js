@@ -3,6 +3,7 @@ function MainAssistant() {
        additional parameters (after the scene name) that were passed to pushScene. The reference
        to the scene controller (this.controller) has not be established yet, so any initialization
        that needs the scene controller should be done in the setup function below. */
+    this.baseURL = 'http://attwifi.know-where.com/attwifip/cgi/selection?mapid=US&lang=en&design=mobile&place=';
     this.model = {
         spinning: true
     }
@@ -34,9 +35,7 @@ MainAssistant.prototype.getGPSFix = function () {
             switch (pos.errorCode) {
                 case 5: case 6:
                     Mojo.Log.info("Location services need to be turned on!"); 
-                    this.failed(
-                        "GPS and Google location services need to be enabled!"
-                    );
+                    this.controller.stageController.swapScene("location-off");
                     break;
                 case 1: case 2:
                     Mojo.Log.info("Temp failure, trying again in 5 seconds.");
@@ -70,7 +69,8 @@ MainAssistant.prototype.getReverseLocation = function () {
             Mojo.Log.info("Found address %s", Object.toJSON(address));
             var addressLine = address.substreet + " " + address.street + 
                 " " + address.city + ", " + address.state;
-            this.controller.stageController.swapScene("results", addressLine);
+            var url = this.baseURL + encodeURIComponent(addressLine);
+            this.controller.stageController.swapScene("results", url);
         }.bind(this),
         onFailure: function (address) {
             Mojo.Log.error(
@@ -79,9 +79,7 @@ MainAssistant.prototype.getReverseLocation = function () {
             switch (address.errorCode) {
                 case 5: case 6:
                     Mojo.Log.info("Location services need to be turned on!"); 
-                    this.failed(
-                        "GPS and Google location services need to be enabled!"
-                    );
+                    this.controller.stageController.swapScene("location-off");
                     break;
                 case 7:
                     Mojo.Log.info("Two reverse lookups at once!");

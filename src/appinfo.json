@@ -1,13 +1,13 @@
 {
     "id": "com.pyen.atthotspot",
-    "version": "1.0.1",
+    "version": "1.0.2",
     "vendor": "Bem Jones-Bey",
     "type": "web",
     "main": "index.html",
     "title": "AT&T Wifi Finder",
     "icon": "icon.png",
     "smallicon": "smallicon.png",
-    "copyright": "",
+    "copyright": "Copyright 2011 Bem Jones-Bey",
     "support": {
         "email": {
             "address": "attwififinder@pyen.com",

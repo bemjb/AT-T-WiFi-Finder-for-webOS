@@ -13,6 +13,7 @@ StageAssistant.setupMenu = function(sceneController) {
         { omitDefaultItems: true },
         {
             items: [
+               { label: 'Enter Address', command: 'address' },
                { label: 'About', command: 'about' },
             ]
         }
@@ -24,6 +25,12 @@ StageAssistant.prototype.handleCommand = function(event) {
         switch(event.command) {
             case 'about':
                 this.controller.pushAppSupportInfoScene();
+                break;
+            case 'address':
+                this.controller.swapScene(
+                    "results",
+                    "http://attwifi.know-where.com/attwifip/"
+                );
                 break;
         }
     }

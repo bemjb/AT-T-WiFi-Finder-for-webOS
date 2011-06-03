@@ -54,7 +54,7 @@
 .location-text {
     margin-top: 1em;
     margin-bottom: 1em;
-    clear: all;
+    clear: both;
 }
 
 .location-icon-text {
